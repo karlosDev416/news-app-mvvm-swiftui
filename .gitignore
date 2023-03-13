@@ -88,3 +88,14 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+## macOS
+*.DS_Store
+
+## Config files containing secret keys
+*.xcconfig
+
+*.xcconfig
+NewsApp/Shared/Assets.xcassets/.DS_Store
+NewsApp/Shared/Development.xcconfig
+NewsApp/Shared/Assets.xcassets/.DS_Store
