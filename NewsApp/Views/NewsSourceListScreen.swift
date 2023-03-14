@@ -21,12 +21,15 @@ struct NewsSourceListScreen: View {
             }
         }
         .listStyle(.plain)
-        .onAppear {
-            newsSourceListViewModel.getSources()
+        .task {
+            await newsSourceListViewModel.getSources()
         }
         .navigationTitle("News Sources")
         .navigationBarItems(trailing: Button(action: {
             // refresh the news
+            Task {
+                await newsSourceListViewModel.getSources()
+            }
         }, label: {
             Image(systemName: "arrow.clockwise.circle")
         }))
